@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 
 
 
-const PhotoList = ({ category }) => {
+const PhotoList = ( {category} ) => {
+    console.log(category);
     const [photos] = useState([
         {
             name: 'Grocery aisle',
@@ -86,11 +87,6 @@ const PhotoList = ({ category }) => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
         {
-            name: 'Docks',
-            category: 'landscape',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-        },
-        {
             name: 'Panoramic village by sea',
             category: 'landscape',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
@@ -104,14 +100,14 @@ const PhotoList = ({ category }) => {
             name: 'Park bench',
             category: 'landscape',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-        },
+        }
     ]);
-
+    // console.log(currentCategory.category);
     const currentPhotos = photos.filter((photo) => photo.category === category);
 
     return (
        <div> 
-        <div className='flex-row'>
+        <div className="flex-row">
           {currentPhotos.map((image, i) => (
             <img
               src={require(`../../assets/small/${category}/${i}.jpg`)}
