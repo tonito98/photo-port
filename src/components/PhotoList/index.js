@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 const PhotoList = ( {category} ) => {
-    console.log(category);
+    
     const [photos] = useState([
         {
             name: 'Grocery aisle',
